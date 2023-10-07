@@ -16,20 +16,21 @@ function MyStack(){
     return(
         <HomeStackNavigator.Navigator
             initialRouteName="HomeScreen"
+            screenOptions={{
+                headerShown: false,
+            }}
         >
             <HomeStackNavigator.Screen
                 name="HomeScreen"
                 component={HomeScreen}
-                />
-                <HomeStackNavigator.Screen
+            />
+            <HomeStackNavigator.Screen
                 name="Stack"
                 component={StackScreen}
-                />
+            />
         </HomeStackNavigator.Navigator>
     )
 }
-
-
 
 
 //Guardar en una variable la funcion del createMaterialBottomTabNavigator
@@ -48,12 +49,15 @@ function MyTabs (){
                 name="Home" 
                 component={MyStack}
                 options={{
-                    tabBarLabel: "Feed",
+                    tabBarLabel: "Inicio",
                     tabBarBadge: 3,
                     headerShown: false
                 }}
                 />
-            <Tab.Screen name="Settings" component={SettingsScreen}/>
+            <Tab.Screen name="App Prestamo" 
+            component={SettingsScreen}
+            
+            />
         </Tab.Navigator>
     );
 }
